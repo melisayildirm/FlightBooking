@@ -9,5 +9,10 @@ namespace FlightBooking.Areas.Admin.Controllers
         {
             return View();
         }
+
+        public IActionResult BookingList()
+        {
+            return View();
+        }
     }
 }
