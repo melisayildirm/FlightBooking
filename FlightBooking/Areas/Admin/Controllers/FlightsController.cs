@@ -29,6 +29,9 @@ namespace FlightBooking.Areas.Admin.Controllers
             await _flightService.CreateFlightAsync(createFlightDto);
             return RedirectToAction("FlightList");
         }
-
+        public async Task<IActionResult> FlightDetail(string id)
+        {
+            return View();
+        }
     }
 }
