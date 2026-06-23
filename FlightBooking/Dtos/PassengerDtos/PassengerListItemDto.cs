@@ -14,7 +14,7 @@
         // Tip
         public string PassengerType { get; set; }     // Yetişkin / Çocuk / Bebek
 
-        // PNR
+        public string Pnr {  get; set; }
         // Koltuk
         public string SeatNumber { get; set; }        // 12A
 
