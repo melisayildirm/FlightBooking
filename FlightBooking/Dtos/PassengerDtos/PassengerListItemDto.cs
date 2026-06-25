@@ -2,7 +2,7 @@
 {
     public class PassengerListItemDto
     {
-       // public string PassengerId { get; set; }
+        public string PassengerId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
@@ -14,7 +14,7 @@
         // Tip
         public string PassengerType { get; set; }     // Yetişkin / Çocuk / Bebek
 
-        public string Pnr {  get; set; }
+       
         // Koltuk
         public string SeatNumber { get; set; }        // 12A
 
