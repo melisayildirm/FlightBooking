@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FlightBooking.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class ForecastController : Controller
     {
         private readonly MongoFlightDataService _mongoFlightDataService;
@@ -12,10 +13,11 @@ namespace FlightBooking.Areas.Admin.Controllers
             _mongoFlightDataService = mongoFlightDataService;
             _flightMlService = flightMlService;
         }
-        public async Task<IActionResult>  TrainModel()
+        public async Task<IActionResult> TrainModel()
         {
             var mlData = await _mongoFlightDataService.ConvertToMlDataAsync();
             _flightMlService.Train(mlData);
+            ViewBag.Message = "Model başarıyla eğitildi.";
             return View();
         }
     }
