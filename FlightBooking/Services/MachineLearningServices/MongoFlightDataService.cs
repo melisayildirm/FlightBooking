@@ -34,5 +34,6 @@ namespace FlightBooking.Services.MachineLearningServices
 
             return mlData;
         }
+
     }
 }
