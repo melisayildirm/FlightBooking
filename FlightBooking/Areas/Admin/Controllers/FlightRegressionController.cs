@@ -24,39 +24,39 @@ namespace FlightBooking.Areas.Admin.Controllers
             return View();
         }
 
-        //public IActionResult January2027Forecast()
-        //{
-        //    var result = new List<string>();
+        public IActionResult January2027Forecast()
+        {
+            var result = new List<string>();
 
-        //    for (int day = 1; day <= 31; day++)
-        //    {
-        //        var date = new DateTime(2027, 1, day);
+            for (int day = 1; day <= 31; day++)
+            {
+                var date = new DateTime(2027, 1, day);
 
-        //        // 🌅 Morning
-        //        var morningInput = new FlightRegressionData
-        //        {
-        //            Month = date.Month,
-        //            DayOfWeek = (float)date.DayOfWeek,
-        //            FlightType = 0
-        //        };
+                // 🌅 Morning
+                var morningInput = new FlightRegressionData
+                {
+                    Month = date.Month,
+                    DayOfWeek = (float)date.DayOfWeek,
+                    FlightType = 0
+                };
 
-        //        var morningPrediction = _regressionService.Predict(morningInput);
+                var morningPrediction = _regressionService.Predict(morningInput);
 
-        //        // 🌙 Evening
-        //        var eveningInput = new FlightRegressionData
-        //        {
-        //            Month = date.Month,
-        //            DayOfWeek = (float)date.DayOfWeek,
-        //            FlightType = 1
-        //        };
+                // 🌙 Evening
+                var eveningInput = new FlightRegressionData
+                {
+                    Month = date.Month,
+                    DayOfWeek = (float)date.DayOfWeek,
+                    FlightType = 1
+                };
 
-        //        var eveningPrediction = _regressionService.Predict(eveningInput);
+                var eveningPrediction = _regressionService.Predict(eveningInput);
 
-        //        result.Add(
-        //            $"{date:dd.MM.yyyy} → Morning: {morningPrediction.Score:0} yolcu | Evening: {eveningPrediction.Score:0} yolcu");
-        //    }
+                result.Add(
+                    $"{date:dd.MM.yyyy} → Morning: {morningPrediction.Score:0} yolcu | Evening: {eveningPrediction.Score:0} yolcu");
+            }
 
-        //    return View(result);
-        //}
+            return View(result);
+        }
     }
 }

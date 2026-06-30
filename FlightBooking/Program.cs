@@ -14,7 +14,7 @@ builder.Services.AddScoped<ICheckInService, CheckInService>();
 
 builder.Services.AddSingleton<FlightMlService>();
 builder.Services.AddScoped<MongoFlightDataService>();
-builder.Services.AddScoped<FlightRegressionService>();
+builder.Services.AddSingleton<FlightRegressionService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
