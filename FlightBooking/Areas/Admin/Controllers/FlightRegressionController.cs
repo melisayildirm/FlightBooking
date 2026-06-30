@@ -16,12 +16,12 @@ namespace FlightBooking.Areas.Admin.Controllers
             _mlService = mlService;
             _regressionService = regressionService;
         }
-        public async Task< IActionResult> TrainRegressionModel()
+        public async Task<IActionResult> TrainRegressionModel()
         {
             var regressionData = await _mongoService.ConvertToRegressionDataAsync();
             _regressionService.Train(regressionData);
             ViewBag.Message = "Regression modeli başarıyla eğitildi.";
-            return View(); 
+            return View();
         }
 
         //public IActionResult January2027Forecast()
